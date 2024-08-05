@@ -1,18 +1,15 @@
 # Gestión de Permisos
 # Parte 1: Gestión de Usuarios
-- ### 📝 1.1 Creación de usuarios 
+- ### 📝 1.1 Creación de usuarios  y 🔒 1.2 Asignación de contraseñas
 
     Crea tres usuarios llamados `usuario1`, `usuario2` y `usuario3`. Establece una nueva contraseña para cada usuario creado.
 
     ```bash
     sudo adduser usuario1
-    sudo adduser usuario2
-    sudo adduser usuario3
-    ```
-- ### 🔒 1.2 Asignación de contraseñas
-    ```bash
     sudo passwd usuario1
+    sudo adduser usuario2
     sudo passwd usuario2
+    sudo adduser usuario3
     sudo passwd usuario3
     ```
 - ### 📄 1.3 Información de Usuarios
@@ -69,7 +66,8 @@
 
         ```bash
         su usuario1
-        echo "Aqui escribo el contenido del archivo desde el usuario1" >> ./archivo1.txt
+        touch /home/usuario1/archivo1.txt
+        echo "Este es el usuario1" >> /home/usuario1/archivo1.txt
         ```
 
         Creación del `archivo1.txt`:
@@ -153,6 +151,8 @@
 # 🤓 Reflexión
 
 - ### ¿Por qué es importante gestionar correctamente los usuarios y permisos en un sistema operativo?
+Porque dentro de un sistema operativo existen diferentes usuarios y cada uno de ellos tiene diferentes permisos, por lo que es importante gestionarlos correctamente para que cada usuario tenga los permisos que le fueron asignados para poder realizar sus tareas y no acceder a información que no se le permita dentro de sus permisos asignados.
+
 
 - ### ¿Qué otros comandos o técnicas conocen para gestionar permisos en Linux?
     ```bash
