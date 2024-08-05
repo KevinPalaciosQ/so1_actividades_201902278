@@ -12,6 +12,7 @@
     sudo adduser usuario3
     sudo passwd usuario3
     ```
+    ![](./imagenes/usuarioss.jpeg)
 - ### 📄 1.3 Información de Usuarios
 
     Muestra la información de `usuario1` usando el comando `id`.
@@ -19,6 +20,7 @@
     ```bash
     id usuario1
     ```
+    ![](./imagenes/id.png)
 - ### ❌ 1.4 Eliminación de Usuario
 
     Elimina `usuario3`, pero conserva su directorio principal.
@@ -26,7 +28,7 @@
     ```bash
     sudo deluser usuario3
     ```
-
+![](./imagenes/delu.png)
 # Parte 2: Gestión de Grupos
 - ### 📝 2.1 Creación de Grupos
     Crea un grupo llamado `grupo1` y `grupo2`.
@@ -43,6 +45,7 @@
     sudo adduser usuario1 grupo1
     sudo adduser usuario2 grupo2
     ```
+    ![](./imagenes/grupos.png)
 - ### 📋 2.3 Verificar Membresía
 
     Verifica que los usuarios han sido agregados a los grupos utilizando el comando `groups`.
@@ -58,7 +61,7 @@
     ```bash
     sudo delgroup grupo2
     ```
-
+![](./imagenes/eliminando.png)
 # Parte 3: Gestión de Permisos
 - ### 📝 3.1 Creación de Archivos y Directorios
 
@@ -72,11 +75,7 @@
 
         Creación del `archivo1.txt`:
 
-        ![Creación del archivo1.txt]()
-
-        Verificando el contenido del `archivo1.txt`:
-
-        ![Verificando el contenido del archivo1.txt]()
+        ![Creación del archivo1.txt](./imagenes/texto1.png)
 
     - Crea un directorio llamado `directorio1` y dentro de ese directorio, un archivo llamado `archivo2.txt`.
 
@@ -88,7 +87,7 @@
 
         Creación del `directorio1` y `archivo2.txt`:
 
-        ![Creación del directorio1 y archivo2.txt]()
+        ![Creación del directorio1 y archivo2.txt](./imagenes/archivo2.png)
 - ### 📋 3.2 Verificar Permisos
 
     Verifica los permisos del archivo y directorio usando el comando `ls -l` y `ls -ld` respectivamente.
@@ -132,12 +131,16 @@
     Intenta acceder al `archivo1.txt` y `directorio1/archivo2.txt` como `usuario2`. Nota cómo el permiso de directorio afecta el acceso a los archivos dentro de él.
 
     - Intento del `usuario2` de acceder al `archivo1.txt`:
-
-        ![Intento del usuario2 de acceder al archivo1.txt]()
-
+    ```
+    usuario2@kev-pc:/home/usuario1$ batcat directorio1/archivo1.txt
+    [bat error] "./directorio1/archivo1.txt": Permision denied (os error 13)
+    ```
     - Intento del `usuario2` de acceder al `directorio1/archivo2.txt`:
 
-        ![Intento del usuario2 de acceder al directorio1/archivo2.txt]()
+    ```
+    usuario2@kev-pc:/home/usuario1$ batcat directorio1/archivo2.txt
+    [bat error] "./directorio1/archivo2.txt": Permision denied (os error 13)
+    ```
 - ### 📋 3.8 Verificación Final
 
     Verifica los permisos y propietario de los archivos y directorio nuevamente con `ls -l` y `ls -ld`.
@@ -147,12 +150,27 @@
     ls -ld directorio1
     ls -l ./directorio1/archivo2.txt
     ```
+  - Verificando los permisos y propietario del  `usuario1`.
+  ```
+  usuario1@kev-pc:~$ ls -l archivo1.txt
+  -rw-r----- 1 usuario1 usuario1 56 ago 4 19:07 archivo1.txt
+  ```
+  usuario1@kev-pc:~$ ls -ls directorio1
+  - verificando los permisos y propietario del `directorio1`.
+ ```
+ drwxr----- 2 usuario1 usuario 1 4096 ago 4 19:13 directorio1
+ ```
 
+  ```
+  usuario1@kev-pc:~$ ls -l ./directorio1/archivo2.txt
+ -rxxrw-r-- 1 usuario1 grupo1 0 ago 4 19:13 directorio1/archivo2.txt
+ ```
 # 🤓 Reflexión
 
 - ### ¿Por qué es importante gestionar correctamente los usuarios y permisos en un sistema operativo?
+```
 Porque dentro de un sistema operativo existen diferentes usuarios y cada uno de ellos tiene diferentes permisos, por lo que es importante gestionarlos correctamente para que cada usuario tenga los permisos que le fueron asignados para poder realizar sus tareas y no acceder a información que no se le permita dentro de sus permisos asignados.
-
+```
 
 - ### ¿Qué otros comandos o técnicas conocen para gestionar permisos en Linux?
     ```bash
