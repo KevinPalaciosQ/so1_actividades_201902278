@@ -6,4 +6,5 @@
 - [`💻 Actividad 1`](./actividad1/README.md)
 - [`👤 Actividad 2`](./actividad2/actividad2.sh)
 - [`👥 Actividad 3`](./actividad3/README.md)
-- [`📝 Actividad 4`](./actividad4/)
+- [`📝 Actividad 4`](./actividad4/README.md)
+- [`🔎 Actividad 5`](./actividad5/README.md)
