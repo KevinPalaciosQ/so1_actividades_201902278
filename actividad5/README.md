@@ -1,4 +1,4 @@
-# Conceptos de Sistemas Operativos
+# Conceptos de Sistemas Operativos ☝️🤓
 
 ## Tipos de Kernel y sus Diferencias
 Existen varios tipos de kernel en los sistemas operativos, y cada uno tiene características únicas que afectan su funcionamiento:
